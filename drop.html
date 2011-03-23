@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>drop</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background-color: #ffffff;
+                color: #1f1f1f;
+                font: 14px/1.5  sans-serif;
+                margin: 0 auto;
+                width: 900px;
+            }
+            
+            /* Every element */
+            nav ul {
+                list-style: none;
+            }
+            nav li {
+                position: relative;
+            }
+            nav li a {
+                padding: 4px;
+                display: block;
+            }
+            nav li a:hover {
+                background: pink;
+            }
+
+            /* Top-horizontal menu */
+            ul.parent {
+                background: red;
+                display: block;
+            }
+            ul.parent > li {
+                background: #cccccc;
+                float: left;
+                position: relative;
+            }
+            ul.parent > li > a {
+                padding-right: 10px;
+                margin-right: 4px;
+            }
+
+            /* Child-vertical menu's */
+            ul.child {
+                z-index: 1;
+                background: green;
+                display: none;
+                left: -20px;
+                position: absolute;
+                top: 28px;
+            }
+            ul.parent > li:hover > ul {
+                display: block;
+            }
+            ul.child > li {
+                float: left;
+                clear: left;
+            }
+            ul.child > li a {
+                width: 80px;
+                padding-left: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul class="parent">
+                <li>
+                    <a href="#">foo</a>
+                    <ul class="child">
+                        <li><a href="#">foo</a></li>
+                        <li><a href="#">bar</a></li>
+                        <li><a href="#">baz</a></li>
+                        <li><a href="#">qux</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">bar</a>
+                    <ul class="child">
+                        <li><a href="#">foo</a></li>
+                        <li><a href="#">bar</a></li>
+                        <li><a href="#">baz</a></li>
+                        <li><a href="#">qux</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">baz</a>
+                    <ul class="child">
+                        <li><a href="#">foo</a></li>
+                        <li><a href="#">bar</a></li>
+                        <li><a href="#">baz</a></li>
+                        <li><a href="#">qux</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">qux</a>
+                    <ul class="child">
+                        <li><a href="#">foo</a></li>
+                        <li><a href="#">bar</a></li>
+                        <li><a href="#">baz</a></li>
+                        <li><a href="#">qux</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </body>
+</html>
